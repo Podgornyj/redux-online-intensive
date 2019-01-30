@@ -22,7 +22,7 @@ export const fetchPostsAsync = () => async (dispatch) => {
 export const fillNewPost = (post) => {
     return {
         type: FILL_NEW_POST,
-        payload: postб
+        payload: post,
     };
 };
 
