@@ -2,18 +2,23 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import cx from 'classnames';
+import { connect } from "react-redux";
 
 // Instruments
 import Styles from './styles.m.css';
 import { book } from '../../navigation/book';
-import { mockedProfile } from '../../instruments/mockedData';
 
-@withRouter
+const mapStateToProps = (state) => {
+    return {
+        isAuthenticated: state.auth.get('isAuthenticated'),
+        profile: state.profile,
+    };
+};
+
+@connect(mapStateToProps)
 export default class Nav extends Component {
     static defaultProps = {
         // State
-        profile:         mockedProfile,
-        isAuthenticated: true,
         isOnline:        false,
 
         // Actions
@@ -21,6 +26,7 @@ export default class Nav extends Component {
     };
 
     _getNav = () => {
+        console.log(this.props)
         const { isAuthenticated, profile } = this.props;
 
         return isAuthenticated ?

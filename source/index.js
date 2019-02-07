@@ -12,7 +12,7 @@ import { store } from './init/store';
 import App from './navigation/App';
 
 render(
-    <Provider store = {store}>
+    <Provider store = { store }>
         <Router>
             <App />
         </Router>
