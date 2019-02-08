@@ -16,6 +16,8 @@ export function* signup ({ payload: userInfo }) {
             throw new Error(message);
         }
 
+        yield apply(localStorage, localStorage.setItem, ['token', profile.token]);
+
         yield put(profileActions.fillProfile(profile));
         yield put(authActions.authenticate());
 
