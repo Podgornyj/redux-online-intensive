@@ -22,8 +22,8 @@ export const postsReducer = (state = initialState, action) => {
             return state.updateIn([state.findIndex((post) => {
                 return post.get('id') === action.payload.postId;
             }), 'likes'], (likers) => {
-                return likers.filter((like) => {
-                    return like.get('id') !== action.payload.liker.get('id')
+                return likers.filter((likeUser) => {
+                    return likeUser.get('id') !== action.payload.userId;
                 });
             });
         case types.CLEAR_POSTS:

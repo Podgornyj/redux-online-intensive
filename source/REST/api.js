@@ -50,6 +50,14 @@ export const api = {
                 },
             });
         },
+        users () {
+            return fetch(`${MAIN_URL}/user/all`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': this.token,
+                },
+            });
+        },
         createPost (comment) {
             return fetch(`${MAIN_URL}/feed`, {
                 method: 'POST',

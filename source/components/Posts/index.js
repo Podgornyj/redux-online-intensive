@@ -12,6 +12,7 @@ import Styles from './styles.m.css';
 import { Composer, Catcher, Post } from '../../components';
 
 import { postsActions } from '../../bus/posts/actions';
+import { userActions } from "../../bus/users/actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -24,12 +25,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         actions: bindActionCreators(
             {
-                fetchPostsAsync: postsActions.fetchPostsAsync,
-                createPostAsync: postsActions.createPostAsync,
-                removePostAsync: postsActions.removePostAsync,
-                likePostAsync: postsActions.likePostAsync,
-                unlikePostAsync: postsActions.unlikePostAsync,
-                unlikePost: postsActions.unlikePost,
+                ...postsActions,
+                ...userActions,
             }
             , dispatch),
     };
@@ -40,6 +37,7 @@ export default class Posts extends Component {
 
     componentDidMount () {
         const { actions } = this.props;
+        actions.fetchUsersAsync();
         actions.fetchPostsAsync();
     }
 
