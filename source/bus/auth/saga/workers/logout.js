@@ -1,5 +1,6 @@
 import { put, apply } from "redux-saga/effects";
 import { replace } from "react-router-redux";
+import { actions } from "react-redux-form";
 
 import { book } from "../../../../navigation/book";
 
@@ -28,6 +29,7 @@ export function* logout () {
         yield apply(localStorage, localStorage.removeItem, ['remember']);
         yield put(postsActions.clearPosts());
         yield put(profileActions.clearProfile());
+        yield put(actions.reset('forms.user'));
         yield put(userActions.clearUsers());
         yield put(uiActions.stoptFetching());
         yield put(authActions.logout());

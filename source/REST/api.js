@@ -7,7 +7,7 @@ export const api = {
     auth: {
         signup (userInfo) {
             return fetch(`${MAIN_URL}/user/${groupId}`, {
-                method: 'POST',
+                method:  'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -16,7 +16,7 @@ export const api = {
         },
         login (userInfo) {
             return fetch(`${MAIN_URL}/user/login`, {
-                method: 'POST',
+                method:  'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -25,7 +25,7 @@ export const api = {
         },
         logout () {
             return fetch(`${MAIN_URL}/user/logout`, {
-                method: 'GET',
+                method:  'GET',
                 headers: {
                     'Authorization': this.token,
                 },
@@ -33,7 +33,7 @@ export const api = {
         },
         authenticate () {
             return fetch(`${MAIN_URL}/user/login`, {
-                method: 'POST',
+                method:  'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -41,10 +41,31 @@ export const api = {
             });
         },
     },
+    profile: {
+        updateProfile (profileInfo) {
+            return fetch(`${MAIN_URL}/user`, {
+                method:  'PUT',
+                headers: {
+                    'Authorization': this.token,
+                    'Content-Type':  'application/json',
+                },
+                body: JSON.stringify(profileInfo),
+            });
+        },
+        updateAvatar (avatarFormData) {
+            return fetch(`${MAIN_URL}/image`, {
+                method:  'POST',
+                headers: {
+                    'Authorization': this.token,
+                },
+                body: avatarFormData,
+            });
+        },
+    },
     posts: {
         fetch () {
             return fetch(`${MAIN_URL}/feed`, {
-                method: 'GET',
+                method:  'GET',
                 headers: {
                     'Authorization': this.token,
                 },
@@ -52,7 +73,7 @@ export const api = {
         },
         users () {
             return fetch(`${MAIN_URL}/user/all`, {
-                method: 'GET',
+                method:  'GET',
                 headers: {
                     'Authorization': this.token,
                 },
@@ -60,17 +81,17 @@ export const api = {
         },
         createPost (comment) {
             return fetch(`${MAIN_URL}/feed`, {
-                method: 'POST',
+                method:  'POST',
                 headers: {
                     'Authorization': this.token,
-                    'Content-Type': 'application/json',
+                    'Content-Type':  'application/json',
                 },
                 body: JSON.stringify({ comment }),
             });
         },
         removePost (postId) {
             return fetch(`${MAIN_URL}/feed/${postId}`, {
-                method: 'DELETE',
+                method:  'DELETE',
                 headers: {
                     'Authorization': this.token,
                 },
@@ -78,7 +99,7 @@ export const api = {
         },
         like (postId) {
             return fetch(`${MAIN_URL}/feed/like/${postId}`, {
-                method: 'PUT',
+                method:  'PUT',
                 headers: {
                     'Authorization': this.token,
                 },

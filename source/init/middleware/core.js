@@ -7,15 +7,15 @@ import createSagaMiddleware from "redux-saga";
 import thunk from "redux-thunk";
 
 const logger = createLogger({
-    duration: true,
-    collapse: true,
-    colors: {
-        title: () => '#139BFE',
+    duration:  true,
+    collapsed: true,
+    colors:    {
+        title:     () => '#139BFE',
         prevState: () => '#1C5FAF',
-        action: () => '#149945',
+        action:    () => '#149945',
         nextState: () => '#a4319f',
-        error: () => '#ff0005',
-    }
+        error:     () => '#ff0005',
+    },
 });
 
 const history = createBrowserHistory();

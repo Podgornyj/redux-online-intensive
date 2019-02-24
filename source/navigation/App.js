@@ -17,7 +17,7 @@ import { socketActions } from "../bus/socket/actions";
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.get('isAuthenticated'),
-        isInitialized: state.auth.get('isInitialized'),
+        isInitialized:   state.auth.get('isInitialized'),
     };
 };
 

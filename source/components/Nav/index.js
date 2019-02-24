@@ -25,7 +25,6 @@ const mapDispatchToProps = {
 export default class Nav extends Component {
 
     _getNav = () => {
-        console.log(this.props)
         const { isAuthenticated, profile } = this.props;
 
         return isAuthenticated ?
