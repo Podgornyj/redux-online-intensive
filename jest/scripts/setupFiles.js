@@ -15,6 +15,33 @@ const userProfile = {
     token,
 };
 
+const users = [
+    {
+        id:        '5c595bc5cf749ff16649a03e',
+        firstName: 'Vasilii',
+        lastName:  'Shubin',
+        avatar:    'https://lab.lectrum.io/redux/api/image/algroktvgc9z/RwzytC7tf7.jpg',
+    },
+    {
+        id:        '5c596000cf749f712d49a03f',
+        firstName: 'Vasiliia',
+        lastName:  'Shubina',
+        avatar:    'https://lab.lectrum.io/redux/api/image/algroktvgc9z/placeholder.jpg',
+    },
+    {
+        id:        '5c59607fcf749fcc2349a040',
+        firstName: 'Vasiliiasd',
+        lastName:  'Shubinasd',
+        avatar:    'https://lab.lectrum.io/redux/api/image/algroktvgc9z/placeholder.jpg',
+    },
+    {
+        id:        '5c596119cf749f767749a041',
+        firstName: 'Vasiliia',
+        lastName:  'Shubins',
+        avatar:    'https://lab.lectrum.io/redux/api/image/algroktvgc9z/placeholder.jpg',
+    }
+];
+
 const credentials = {
     email:    'test@email.com',
     password: '1111',
@@ -59,6 +86,7 @@ global.__ = {
     fetchResponseFail400,
     credentials,
     url,
+    users,
 };
 global.fetch = fetch;
 global.localStorage = new LocalStorage();

@@ -8,7 +8,7 @@ export const userActions = {
     },
     fillUsers: (users) => {
         return {
-            type: types.FILL_USERS,
+            type:    types.FILL_USERS,
             payload: users,
         };
     },
