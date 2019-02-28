@@ -1,6 +1,6 @@
-import { usersReducer } from './reducer';
-import { userActions } from './actions';
-import { types } from "./types";
+import { usersReducer } from '../reducer';
+import { userActions } from '../actions';
+import { types } from "../types";
 import { List, fromJS } from "immutable";
 
 const initialState = List();

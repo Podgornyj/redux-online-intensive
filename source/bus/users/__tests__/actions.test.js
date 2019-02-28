@@ -1,5 +1,5 @@
-import { userActions } from './actions';
-import { types } from "./types";
+import { userActions } from '../actions';
+import { types } from "../types";
 
 test('Test clearUsers action', () => {
     expect(userActions.clearUsers()).toEqual({
