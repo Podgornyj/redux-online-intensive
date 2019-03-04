@@ -15,3 +15,6 @@ test('Test setOfflineState action', () => {
 test('Test emitError action', () => {
     expect(uiActions.emitError(__.error, __.errorMessage)).toMatchSnapshot();
 });
+test('Test emitError action', () => {
+    expect(uiActions.emitError(__.error)).toMatchSnapshot();
+});

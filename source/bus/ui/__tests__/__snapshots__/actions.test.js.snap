@@ -9,6 +9,15 @@ Object {
 }
 `;
 
+exports[`Test emitError action 2`] = `
+Object {
+  "error": true,
+  "meta": null,
+  "payload": [Error: TEST_ERROR_MESSAGE.],
+  "type": "EMIT_ERROR",
+}
+`;
+
 exports[`Test setOfflineState action 1`] = `
 Object {
   "type": "SET_OFFLINE_STATE",
